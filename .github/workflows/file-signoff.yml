@@ -1,0 +1,21 @@
+name: File-signoff
+
+# Checks with aisignoff that every file (with [history], every line) is declared,
+# and publishes the file badges on pushes to the default branch.
+# No SIGNOFF.toml yet? Write "@IMGAgent signoff" in an issue, or run "aisignoff init".
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+  merge_group:   # with a merge queue: checks the commit that will land
+  workflow_dispatch:
+
+permissions:
+  contents: write   # the badges branch
+
+jobs:
+  file-signoff:
+    uses: industrial-mathematics-group/.github/.github/workflows/file-signoff.yml@main
+    # with:
+    #   weight: lines                 # weight the badges by lines instead of files
+    #   aisignoff-version: "0.24.0"   # another release of aisignoff than the organisation's
