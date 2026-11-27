@@ -1,0 +1,17 @@
+# AI declarations for this repository: generation (G0-G3), human review (H0-H3)
+# and AI review (A0-A3). Set up by IMGAgent; check with: aisignoff lint
+# The LAST annotation that matches a file wins.
+version = 4
+
+[[annotations]]
+path = "**"
+AI-Generation = "G0"
+Human-Review = "H2"
+AI-Review = "A0"
+Reviewed-by = ["tobidamm"]
+
+[history]
+enabled = true
+default-branch = "main"
+merge-method = "merge"
+undeclared = "baseline"
